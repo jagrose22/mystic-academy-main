@@ -1,214 +1,3 @@
-# 🔮 Detailed Step-by-Step: Unified Mystic Academy Setup
-
-## ✅ Step 1: Fix Your Domain DNS (First Priority)
-
-### 1A: Switch to Namecheap BasicDNS
-1. **In your Namecheap Advanced DNS** (where you took the screenshot)
-2. **Click the red "Change DNS Type" link** (in HOST RECORDS section)
-3. **Select "Namecheap BasicDNS"** from the dropdown
-4. **Click Save/Confirm**
-5. **Wait 2-4 hours** for DNS to propagate
-
-### 1B: Verify DNS Switch Worked
-1. **Go back to Advanced DNS** after 2-4 hours
-2. **You should now see:** "Add New Record" button
-3. **Add these 5 DNS records:**
-
-```
-Record 1:
-Type: A Record
-Host: @
-Value: 185.199.108.153
-TTL: Automatic
-
-Record 2:
-Type: A Record
-Host: @
-Value: 185.199.109.153
-TTL: Automatic
-
-Record 3:
-Type: A Record
-Host: @
-Value: 185.199.110.153
-TTL: Automatic
-
-Record 4:
-Type: A Record
-Host: @
-Value: 185.199.111.153
-TTL: Automatic
-
-Record 5:
-Type: CNAME Record
-Host: www
-Value: jagrose22.github.io
-TTL: Automatic
-```
-
-**Replace YOUR-GITHUB-USERNAME with your actual GitHub username**
-
----
-
-## ✅ Step 2: Create Hub Repository with Main Landing Page
-
-### 2A: Create Main Repository
-1. **Go to GitHub.com** and sign in
-2. **Click green "New" button** (or + icon → New repository)
-3. **Repository name:** `mystic-academy-hub`
-4. **Description:** "Main landing page for Mystic Academy"
-5. **Make it Public** ✅
-6. **Check "Add a README file"** ✅
-7. **Click "Create repository"**
-
-### 2B: Create Main Hub Page
-1. **In your new repository**, click "Create new file"
-2. **File name:** `index.html`
-3. **Copy and paste this code:** (I'll provide the updated hub code below)
-4. **Scroll down to "Commit new file"**
-5. **Commit message:** "Add main hub landing page"
-6. **Click "Commit new file"**
-
-### 2C: Enable GitHub Pages
-1. **Go to Settings** tab in your repository
-2. **Click "Pages"** in the left sidebar
-3. **Source:** Deploy from a branch
-4. **Branch:** main
-5. **Folder:** / (root)
-6. **Click "Save"**
-
-### 2D: Add Custom Domain
-1. **Still in Settings → Pages**
-2. **Custom domain:** Enter `mysticacademy.academy`
-3. **Click "Save"**
-4. **Wait 10-15 minutes** for GitHub to verify
-
----
-
-## ✅ Step 3: Set Up Subdirectories for Astrology and Tarot
-
-### 3A: Create Astrology Academy Repository
-1. **Create new repository:** `astrology-academy`
-2. **Make it Public**
-3. **Add README file**
-4. **Click "Create repository"**
-
-### 3B: Upload Your Existing Astrology Site
-1. **In astrology-academy repo**, click "uploading an existing file"
-2. **Upload your astrology HTML file**
-3. **Rename it to:** `index.html` (if it's not already)
-4. **Commit the file**
-
-### 3C: Enable GitHub Pages for Astrology
-1. **Settings → Pages**
-2. **Deploy from branch: main**
-3. **Save**
-4. **Note the URL:** `https://jagrose22.github.io/jgastrologyacademy/`
-
-### 3D: Create Tarot Academy Repository
-1. **Create new repository:** `tarot-academy`
-2. **Make it Public**
-3. **Add README file**
-4. **Click "Create repository"**
-
-### 3E: Upload Tarot Academy Site
-1. **In tarot-academy repo**, click "Create new file"
-2. **File name:** `index.html`
-3. **Copy the tarot academy code** (from my previous artifact)
-4. **Commit the file**
-
-### 3F: Enable GitHub Pages for Tarot
-1. **Settings → Pages**
-2. **Deploy from branch: main**
-3. **Save**
-4. **Note the URL:** `https://jagrose22.github.io/tarot-academy/`
-
----
-
-## ✅ Step 4: Migrate Existing Content to New Structure
-
-### 4A: Update Main Hub Links
-1. **Go to your `mystic-academy-hub` repository**
-2. **Click on `index.html`**
-3. **Click the pencil icon** (Edit this file)
-4. **Find these lines in the code:**
-```html
-<a href="https://jagrose22.github.io/astrology-academy/" class="academy-btn">Enter Astrology Academy</a>
-
-<a href="https://jagrose22.github.io/tarot-academy/" class="academy-btn">Enter Tarot Academy</a>
-```
-5. **Replace `your-username`** with your actual GitHub username
-6. **Commit changes**
-
-### 4B: Test Your Links
-1. **Visit your main site:** `mysticacademy.academy`
-2. **Click "Enter Astrology Academy"** - should go to your astrology site
-3. **Click "Enter Tarot Academy"** - should go to your tarot site
-4. **If links don't work,** double-check the URLs and your GitHub username
-
----
-
-## ✅ Step 5: Add Consistent Navigation Between Sections
-
-### 5A: Add Navigation to Astrology Site
-1. **Go to your `astrology-academy` repository**
-2. **Edit the `index.html` file**
-3. **Add this navigation code** after the `<header>` section:
-
-```html
-<div style="background: rgba(26, 15, 58, 0.9); padding: 1rem; text-align: center; border-bottom: 2px solid #d4af37;">
-    <a href="https://mysticacademy.academy" style="color: #d4af37; text-decoration: none; margin: 0 1rem; font-family: 'Cinzel', serif;">🏠 Main Hub</a>
-    <a href="https://jagrose22.github.io/tarot-academy/" style="color: #d4af37; text-decoration: none; margin: 0 1rem; font-family: 'Cinzel', serif;">🔮 Tarot Academy</a>
-</div>
-```
-
-4. **Replace `your-username`** with your GitHub username
-5. **Commit changes**
-
-### 5B: Add Navigation to Tarot Site
-1. **Go to your `tarot-academy` repository**
-2. **Edit the `index.html` file**
-3. **Add the same navigation code** after the `<header>` section:
-
-```html
-<div style="background: rgba(26, 15, 58, 0.9); padding: 1rem; text-align: center; border-bottom: 2px solid #d4af37;">
-    <a href="https://mysticacademy.academy" style="color: #d4af37; text-decoration: none; margin: 0 1rem; font-family: 'Cinzel', serif;">🏠 Main Hub</a>
-    <a href="https://jagrose22.github.io/jgastrologyacademy/" style="color: #d4af37; text-decoration: none; margin: 0 1rem; font-family: 'Cinzel', serif;">⭐ Astrology Academy</a>
-</div>
-```
-
-4. **Replace `your-username`** with your GitHub username
-5. **Commit changes**
-
----
-
-## ✅ Step 6: Launch Unified Academy!
-
-### 6A: Final Testing
-1. **Visit your main site:** `mysticacademy.academy`
-2. **Test navigation:** Click between all three sections
-3. **Check mobile responsiveness:** View on phone/tablet
-4. **Verify HTTPS:** Make sure you see the lock icon in browser
-
-### 6B: Optional Enhancements
-1. **Add consistent branding:** Same colors/fonts across all sites
-2. **Create an About page:** Add information about yourself
-3. **Add contact information:** Email or contact form
-4. **Social media links:** If you have any
-
-### 6C: Share Your Academy
-1. **Your main URL:** `mysticacademy.academy`
-2. **Share on social media**
-3. **Add to your email signature**
-4. **Tell friends and family!**
-
----
-
-## 🎨 Updated Main Hub Code
-
-Here's the complete updated code for your main hub (`index.html`):
-
-```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -495,6 +284,19 @@ Here's the complete updated code for your main hub (`index.html`):
                 justify-content: center;
             }
         }
+
+        /* Coming Soon Badge */
+        .coming-soon {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            background: var(--gold);
+            color: var(--midnight-blue);
+            padding: 0.5rem 1rem;
+            border-radius: 15px;
+            font-size: 0.8rem;
+            font-weight: bold;
+        }
     </style>
 </head>
 <body>
@@ -514,6 +316,7 @@ Here's the complete updated code for your main hub (`index.html`):
                 <a href="#home">Home</a>
                 <a href="#academies">Academies</a>
                 <a href="#about">About</a>
+                <a href="#contact">Contact</a>
             </nav>
         </div>
     </header>
@@ -530,7 +333,7 @@ Here's the complete updated code for your main hub (`index.html`):
                 <span class="academy-icon">⭐</span>
                 <h2>Astrology Academy</h2>
                 <p>Discover the language of the stars and planets. Learn to read birth charts, understand planetary influences, and unlock the cosmic wisdom that guides your life path.</p>
-                <a href="https://jagrose22.github.io/jgastrologyacademy/" class="academy-btn">Enter Astrology Academy</a>
+                <a href="https://jagrose22.github.io/astrology-academy/" class="academy-btn">Enter Astrology Academy</a>
             </div>
 
             <div class="academy-card">
@@ -561,44 +364,14 @@ Here's the complete updated code for your main hub (`index.html`):
                 });
             });
         });
+
+        // Handle subdirectory routing
+        const path = window.location.pathname;
+        if (path.includes('/astrology')) {
+            window.location.href = 'https://your-username.github.io/astrology-academy/';
+        } else if (path.includes('/tarot')) {
+            window.location.href = 'https://your-username.github.io/tarot-academy/';
+        }
     </script>
 </body>
 </html>
-```
-
-**Remember to replace `YOUR-USERNAME` with your actual GitHub username in the links!**
-
----
-
-## 📋 Quick Checklist
-
-### Phase 1: Domain Setup
-- [ ] Switch DNS to Namecheap BasicDNS
-- [ ] Add 4 A records + 1 CNAME record
-- [ ] Wait for DNS propagation (2-4 hours)
-
-### Phase 2: GitHub Setup
-- [ ] Create `mystic-academy-main` repository
-- [ ] Upload main hub HTML file
-- [ ] Enable GitHub Pages
-- [ ] Add custom domain: `mysticacademy.academy`
-
-### Phase 3: Academy Sites
-- [ ] Create `jgastrologyacademy` repository
-- [ ] Upload your existing astrology site
-- [ ] Create `tarot-academy` repository
-- [ ] Upload tarot academy site
-- [ ] Enable GitHub Pages for both
-
-### Phase 4: Connect Everything
-- [ ] Update GitHub username in hub links
-- [ ] Test all navigation works
-- [ ] Add navigation bars to academy sites
-- [ ] Final testing
-
-### Phase 5: Launch!
-- [ ] Verify everything works
-- [ ] Share your new academy
-- [ ] Celebrate! 🎉
-
-**Start with Step 1 (DNS) and work through each step. Let me know when you complete each phase and need help with the next one!**
